@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>MeTube</title>
-
+    <link rel="shortcut icon" href="playicon.png">
     <%= stylesheet_link_tag    "application", media: 'all' %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <div class="subnav">
+      Featured Playlists
+    </div>
 
     <%= render "shared/nav" %>
 

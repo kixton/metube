@@ -1,13 +1,15 @@
 
-<div class="main">
-<h2>Featured</h2>
+<div class="main main-vid">
 <% @videos.each do |video| %>
 
-  <iframe width="200" height="150" src="http://www.youtube.com/embed/<%= video.url%>?modestbranding=1&amp;showinfo=0&amp;fs=0&amp;controls=0" class="showvideo"></iframe>
+  <div class="vid-thumb-info">
+  <img src="http://img.youtube.com/vi/<%=video.url%>/hqdefault.jpg" class="vid-thumb"><br>
+<!--   <iframe width="200" height="150" src="http://www.youtube.com/embed/<%= video.url%>?modestbranding=1&amp;showinfo=0&amp;fs=0&amp;controls=0" class="showvideo"></iframe><br> -->
 
-  <%= link_to(video.title, video_path(video)) %> by
+  <%= link_to(video.title, video_path(video)) %><br> by
   <em><%= video.author.name %></em>
-  <br>
+  </div>
 
 <% end %>
+
 </div>

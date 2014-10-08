@@ -5,7 +5,6 @@ body {
 .topnav {
   background: #fff;
   height: 55px; 
-  margin-bottom: 20px;
   border-bottom: 1px solid #ccc;
 }
 
@@ -21,13 +20,42 @@ body {
   margin: 10px;
 }
 
-.upload {
+.subnav {
+  clear: both;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  padding: 5px;
+}
+
+.subnav a {
+  color: #666;
+  font-size: .8em;
+  margin: 0 10px;
+  padding: 7px 2px;
+}
+
+.subnav a:hover {
+  border-bottom: 2px solid #e51c23;
+}
+
+.subnav .active {
+  color: #000;
+  font-weight: bold;
+  border-bottom: 2px solid #e51c23;
+}
+
+.navbtn {
   float: right;
-  margin: 10px 50px;
+  margin: 10px 30px 10px 0px;
   background: #eee;
   border: 1px solid #999;
   color: #333;
   font-weight: bold;
+}
+
+.login {
+  background: blue;
 }
 
 .main {
@@ -40,7 +68,25 @@ body {
   padding: 20px;
 }
 
-.showvideo {
+.main-vid {
+  height: 550px;
+  margin-bottom: 50px;
+}
+
+.vid-thumb {
+  width: 200px;
+}
+
+.vid-thumb-info {
+  float: left;
+  width: 180px;
+  margin: 5px;
+  font-size: .7em;
+}
+
+.vid-thumb-info a {
+  font-weight: bold;
+  font-size: 12px;
 }
 
 .dropdown {

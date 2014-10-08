@@ -1,0 +1,27 @@
+SessionController
+def login
+  user = User.find_by(params[:email])
+  if user.authenticate(params[:password])
+    sessions[:user] = user.id
+  end
+
+  redirect_to root_path
+end
+
+def logout
+  user = User.find_by(params[:email])
+  sessions[:user] = nil
+end
+
+
+
+post '/sign_in' => 'sessions#login'
+
+
+def current_user
+  @user ||= User.find(sessions[:user_id])
+
+
+<%= link_to image_tag("http://img.youtube.com/vi/<%=video.url%>/hqdefault.jpg", video_path(video) %>
+
+link_to "Login", new_user_session_path

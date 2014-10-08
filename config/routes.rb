@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :videos
   resources :playlists
   post '/videos/:id/playlist_add' => 'videos#add_to_playlist'

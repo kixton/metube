@@ -8,6 +8,18 @@
     <input type="text" placeholder="Search video" class="large-4 columns"/>
   </div>
 
-    <%= link_to("Upload", {action: "new"}, class: "button tiny upload") %>
-  <br>
+    <% if !user_signed_in? %>
+    <% binding.pry %>
+      <%= link_to("Log In", new_user_session_path, class: "button tiny navbtn login") %>
+    <% else %>
+      <%= link_to("Log Out", destroy_user_session_path, method: :delete, class: "button tiny navbtn logout") %>
+    <% end %>
+    <%= link_to("Upload", new_video_path, class: "button tiny navbtn") %>
+
+
+  <div class="subnav">
+    <%= link_to("Featured", videos_path, class: "active") %>
+    <%= link_to("Playlists", playlists_path) %>
+  </div>
 </div>
+

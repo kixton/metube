@@ -1,5 +1,6 @@
 class VideosController < ApplicationController
 
+  before_action :authenticate_user!, :except => [:index, :show]
   # list all videos - GET /videos
   def index
     @videos = Video.all
@@ -58,8 +59,16 @@ class VideosController < ApplicationController
 
   def add_to_playlist
     @video = Video.find(params[:id])
+    @video.playlists(params[:playlist_id])
     @playlist = Playlist.find(params[:playlist_id])
-    @video.playlists << @playlist
+
+    # if playlist already includes the video, do not add
+    if @playlist == @video.playlists.find(params[:playlist_id])
+      "playlist already includes video"
+    else
+      @video.playlists << @playlist
+    end
+
   end
 
   private

@@ -14,7 +14,6 @@
 // 
 //= require jquery
 //= require jquery_ujs
+//= require underscore
 //= require foundation
-//= require turbolinks
-
-$(function(){ $(document).foundation(); });
+//= require video

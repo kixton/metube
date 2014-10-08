@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :authenticate_user!, :except => [:index, :show]
+
   # list all users - GET /users
   def index
     @users = User.all
@@ -7,7 +9,11 @@ class UsersController < ApplicationController
 
   #show a single user - GET /users/:id
   def show
-    @user = User.find(params[:id])
+    if user_signed_in?
+      @user = User.find(params[:id])
+    else
+      # do something else
+    end
   end
 
   #new user creation form - GET /users/new
