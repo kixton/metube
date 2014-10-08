@@ -6,20 +6,14 @@
 <%= @video.title %><br>
 Uploaded by <em><%= @video.author.name %></em><br><br>
 
-<select class="button dropdown tiny">
+<select id="add_to_playlist" class="button dropdown tiny" name="playlist_id">
     <option selected disabled>Add to Playlist</option>
   <% @playlists.each do |playlist| %>
     <option value="<%= playlist.id %>"><%= playlist.listname %></option>
   <% end %>
 </select>
 
-  <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="button dropdown tiny">Add to Playlist</button><br>
-  <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
 
-    <% @playlists.each do |playlist| %>
-      <li><a href="#" name="playlist_id" value="<%=playlist.id%>"><%= playlist.listname %></a></li>
-    <% end %>
-  </ul>
 
   <input type="button" value="Edit" class="button tiny" 
   onClick="javascript:location.href = '/videos/<%= @video.id %>/edit'">
@@ -30,3 +24,13 @@ Uploaded by <em><%= @video.author.name %></em><br><br>
 <br>
 
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+
+  $("#add_to_playlist").change( function() {
+  console.log("clicked")
+    $.post( "/videos/<%=@video.id%>/playlist_add", {playlist_id: $("#add_to_playlist").val()} );
+  });
+
+</script>

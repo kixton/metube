@@ -7,8 +7,12 @@
   onClick="javascript:location.href = '/videos/<%= @playlist.id %>/edit'">
 
   <%= link_to("Delete", playlist_path(@playlist), method: :delete, 
-  data: {confirm: "Are you sure you want to delete this playlist?"}, class: "button tiny alert" ) %>
+  data: {confirm: "Are you sure you want to delete this playlist?"}, class: "button tiny alert" ) %><br>
   
+  <% @playlist.videos.each do |video| %>
+    <a href="/videos/<%=video.id%>"><%= video.title %></a><br>
+  <% end %>
+
 
 <br>
 </div>

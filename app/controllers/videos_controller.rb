@@ -59,7 +59,6 @@ class VideosController < ApplicationController
   def add_to_playlist
     @video = Video.find(params[:id])
     @playlist = Playlist.find(params[:playlist_id])
-
     @video.playlists << @playlist
   end
 
