@@ -1,0 +1,13 @@
+
+<div class="main">
+<h2>Featured</h2>
+<% @videos.each do |video| %>
+
+  <iframe width="200" height="150" src="http://www.youtube.com/embed/<%= video.url%>?modestbranding=1&amp;showinfo=0&amp;fs=0&amp;controls=0" class="showvideo"></iframe>
+
+  <%= link_to(video.title, video_path(video)) %> by
+  <em><%= video.author.name %></em>
+  <br>
+
+<% end %>
+</div>

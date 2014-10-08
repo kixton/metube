@@ -1,0 +1,48 @@
+body {
+  background: #eee;
+}
+
+.topnav {
+  background: #fff;
+  height: 55px; 
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo {
+  float: left;
+  margin: 5px 30px;
+}
+
+.search {
+  float: left;
+  height: 30px;
+  width: 350px;
+  margin: 10px;
+}
+
+.upload {
+  float: right;
+  margin: 10px 50px;
+  background: #eee;
+  border: 1px solid #999;
+  color: #333;
+  font-weight: bold;
+}
+
+.main {
+  background: #fff;
+  clear:both;
+  position: relative;
+  margin: auto;
+  width: 80%;
+  top: 80px;
+}
+
+.showvideo {
+  margin: 20px;
+}
+
+.dropdown {
+  width: 150px;
+}

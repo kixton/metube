@@ -1,0 +1,13 @@
+<!-- underscore indicates that file is a partial -->
+
+<div class="topnav fixed">
+  <div class="logo">
+    <%= link_to( image_tag("logo.jpeg", width: "100"), videos_path) %><br>
+  </div>
+  <div class="search">
+    <input type="text" placeholder="Search video" class="large-4 columns"/>
+  </div>
+
+    <%= link_to("Upload", {action: "new"}, class: "button tiny upload") %>
+  <br>
+</div>

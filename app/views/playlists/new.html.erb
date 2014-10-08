@@ -1,0 +1,16 @@
+<div class="main">
+  <%= form_for @playlist do |f| %>
+
+    <% if @playlist.errors.any? %>
+      <ul>
+        <% @playlist.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    List Name: <%= f.text_field :listname %><br>
+
+    <%= f.submit %>
+  <% end %>
+</div>

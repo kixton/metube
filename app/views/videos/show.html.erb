@@ -1,0 +1,32 @@
+
+<div class="main">
+
+<iframe width="500" height="300" src="http://www.youtube.com/embed/<%= @video.url%>?modestbranding=1&amp;showinfo=0&amp;fs=0&amp;controls=0" class="showvideo"></iframe><br>
+
+<%= @video.title %><br>
+Uploaded by <em><%= @video.author.name %></em><br><br>
+
+<select class="button dropdown tiny">
+    <option selected disabled>Add to Playlist</option>
+  <% @playlists.each do |playlist| %>
+    <option value="<%= playlist.id %>"><%= playlist.listname %></option>
+  <% end %>
+</select>
+
+  <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="button dropdown tiny">Add to Playlist</button><br>
+  <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+
+    <% @playlists.each do |playlist| %>
+      <li><a href="#" name="playlist_id" value="<%=playlist.id%>"><%= playlist.listname %></a></li>
+    <% end %>
+  </ul>
+
+  <input type="button" value="Edit" class="button tiny" 
+  onClick="javascript:location.href = '/videos/<%= @video.id %>/edit'">
+
+  <%= link_to("Delete", video_path(@video), method: :delete, 
+  data: {confirm: "Are you sure you want to delete this video?"}, class: "button tiny alert" ) %>
+
+<br>
+
+</div>

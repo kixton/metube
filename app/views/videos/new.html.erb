@@ -1,0 +1,20 @@
+<div class="main">
+<%= form_for @video do |f| %>
+
+  <% if @video.errors.any? %>
+    <ul>
+      <% @video.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+
+  title: <%= f.text_field :title %><br>
+  url: <%= f.text_field :url %><br>
+
+  <%= f.submit %>
+<% end %>
+
+<br>
+</div>

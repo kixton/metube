@@ -43,4 +43,6 @@ gem 'rspec-rails'
 
 gem 'pry-byebug'
 
+gem 'foundation-rails'
+
 
