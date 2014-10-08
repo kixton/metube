@@ -22,6 +22,9 @@ def current_user
   @user ||= User.find(sessions[:user_id])
 
 
-<%= link_to image_tag("http://img.youtube.com/vi/<%=video.url%>/hqdefault.jpg", video_path(video) %>
+<%= link_to(video_path(video)) do %>
+  <%= image_tag("http://img.youtube.com/vi/<%=video.url%>/hqdefault.jpg") %>
+<% end %>
 
 link_to "Login", new_user_session_path
+

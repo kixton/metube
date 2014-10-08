@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  resources :users
   resources :videos
   resources :playlists
+  get '/users/sign_up' => 'users#new'
   post '/videos/:id/playlist_add' => 'videos#add_to_playlist'
 
   root 'videos#index'

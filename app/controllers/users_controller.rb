@@ -12,7 +12,8 @@ class UsersController < ApplicationController
     if user_signed_in?
       @user = User.find(params[:id])
     else
-      # do something else
+      # redirect to login
+      render new_
     end
   end
 

@@ -47,15 +47,29 @@ body {
 
 .navbtn {
   float: right;
-  margin: 10px 30px 10px 0px;
+  margin: 10px 25px 10px 0px;
   background: #eee;
   border: 1px solid #999;
   color: #333;
   font-weight: bold;
+  width: 90px;
+  color: #000;
+}
+
+.navbtn:hover {
+  background: #ddd;
+  color: #000;
 }
 
 .login {
-  background: blue;
+  background: #167ac6;
+  color: #fff;
+  border-color: #126db3;
+}
+
+.login:hover {
+  background: #126db3;
+  color: #fff;
 }
 
 .main {

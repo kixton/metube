@@ -1,0 +1,23 @@
+<br><br>
+
+<font color="red">This is a single user's profile page - styling to be updated</font><br>
+<h2><%= @user.name %></h2>
+
+<strong>These are the videos uploaded by the user</strong><br>
+<% @user.videos.each do |video| %>
+  <%= video.title %> <br>
+
+<% end %>
+
+<br>
+
+<strong>This is the user's playlists</strong><br>
+<% @user.playlists.each do |playlist| %>
+
+  <%= playlist.listname %><br>
+  
+  <% playlist.videos.each do |video| %>
+    <%= video.title %>
+  <% end %>
+
+<% end %>

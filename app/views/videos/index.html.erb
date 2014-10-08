@@ -3,11 +3,18 @@
 <% @videos.each do |video| %>
 
   <div class="vid-thumb-info">
-  <img src="http://img.youtube.com/vi/<%=video.url%>/hqdefault.jpg" class="vid-thumb"><br>
+
+  <%= link_to(video_path(video)) do %>
+    <%= image_tag("http://img.youtube.com/vi/#{video.url}/hqdefault.jpg") %>
+  <% end %>
+  <!-- <img src="http://img.youtube.com/vi/<%=video.url%>/hqdefault.jpg" class="vid-thumb"><br> -->
 <!--   <iframe width="200" height="150" src="http://www.youtube.com/embed/<%= video.url%>?modestbranding=1&amp;showinfo=0&amp;fs=0&amp;controls=0" class="showvideo"></iframe><br> -->
 
-  <%= link_to(video.title, video_path(video)) %><br> by
-  <em><%= video.author.name %></em>
+  <span class="vid-link-title"><%= link_to(video.title, video_path(video)) %></span><br>
+  by <em><%= link_to(video.author.name, user_path(video.author)) %></em>
+  
+
+
   </div>
 
 <% end %>
