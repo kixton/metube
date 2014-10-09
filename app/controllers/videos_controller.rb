@@ -1,7 +1,8 @@
+require 'rest_client'
 class VideosController < ApplicationController
 
   before_action :authenticate_user!, :except => [:index, :show]
-  
+
   def video_params
     params.require(:video).permit(:name, :video)
   end
@@ -25,12 +26,26 @@ class VideosController < ApplicationController
   #new video creation form - GET /videos/new
   def new
     #creating a blank video instance for our form
-  end
 
+  end
+  
   #create a new video - POST /videos
   def create
-    @video = current_user.videos.new(video_params)
+    @apiKey = "?api_key=" + ENV["GOOGLE_API"]
+    @request_type = "/search"
+    @apiUrl = "https://www.googleapis.com/youtube/v3" + @request_type + @apiKey
 
+    binding.pry
+    test = RestClient.get("https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=bLX7EVoOR1k&key=AIzaSyD_kOEim4IBqhjAGNn7MQZ_rEA4PTkp4ks")
+    binding.pry
+
+
+    @video = current_user.videos.new(video_params)
+    @video.file_name = params[:video][:video].original_filename
+
+    @vidupload = VideoUploader.new
+    @vidupload.store!(params[:video][:video])
+    
     if @video.save
       redirect_to @video
     else

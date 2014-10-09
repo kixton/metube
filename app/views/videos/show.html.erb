@@ -4,6 +4,8 @@
 
 <div class="main viewvid">
 
+  <!-- if YouTube url, show iframe, else show video uploaded -->  
+
   <iframe width="660" height="400" src="http://www.youtube.com/embed/<%=@video.url%>?modestbranding=1&amp;showinfo=0&amp;fs=0&amp;controls=0" class="showvideo" id="<%=@video.id%>"></iframe><br>
 
   <%= @video.title %><br>

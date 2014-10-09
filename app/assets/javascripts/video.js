@@ -5,13 +5,13 @@
 
     $.post( "/videos/" + video_id + "/playlist_add", {playlist_id: $("#add_to_playlist").val()}, function() {
       $('.main').prepend("hello world");
-    } );
+    })
 
-  });
+  })
 
 $(document).ready(
   $("#playlists").click(function() {
     $("#playlists").attr("class", "active");
     $("#featured").removeClass("active");
-  });
+  })
 )

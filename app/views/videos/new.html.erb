@@ -11,8 +11,8 @@
   <% end %>
 
   Video Title: <%= f.text_field :title %><br>
-  YouTube video ID: <%= f.text_field :url %><br>
-  Upload Video: <%=f.file_field :video %>
+  Upload Video: <%=f.file_field :video %><br><br>
+  (or YouTube video ID): <%= f.text_field :url %><br>
 
   <%= f.submit "Upload", class: "navbtn login submit-btn" %><br><br>
 

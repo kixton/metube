@@ -1,3 +1,20 @@
+ENV (variables)
+
+echo $SHELL
+
+stored on local machine
+
+
+gem 'figaro'
+figaro install
+
+gem 'rest-client'
+
+use localhost or blank
+
+=======
+
+
 SessionController
 def login
   user = User.find_by(params[:email])

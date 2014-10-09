@@ -49,4 +49,7 @@ gem 'devise'
 
 gem 'carrierwave'
 
+gem 'figaro'
+
+gem 'rest-client'
 
