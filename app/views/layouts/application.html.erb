@@ -12,18 +12,20 @@
   </head>
 
   <body>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <div class="subnav">
-      Featured Playlists
-    </div>
-
+    
     <%= render "shared/nav" %>
 
-    <%= yield %>
+    <div class="main-container">
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+    <% elsif alert %>
+        <p class="notice"><%= alert %></p>
+    <% end %>
+
+      <%= yield %>
+    </div>
 
     <%= javascript_include_tag "application" %>
+
   </body>
 </html>

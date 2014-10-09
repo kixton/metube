@@ -26,5 +26,32 @@ def current_user
   <%= image_tag("http://img.youtube.com/vi/<%=video.url%>/hqdefault.jpg") %>
 <% end %>
 
+
+
+lockable
+
+copy ## lockabale
+
+rails g migration AddLocableToUsers
+
+chage_table(:users) do |t|
+
+  t.integer
+  t.string
+  t.datetime
+
+
+  add_index (for unlock token)
+
+
+  check devise.rb
+
+  unlock_strategy
+  max_attempts
+
+
 link_to "Login", new_user_session_path
+
+
+  
 

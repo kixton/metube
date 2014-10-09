@@ -24,6 +24,7 @@ body {
   clear: both;
   background: #fff;
   border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
   text-align: center;
   padding: 5px;
 }
@@ -47,7 +48,7 @@ body {
 
 .navbtn {
   float: right;
-  margin: 10px 25px 10px 0px;
+  margin: 8px 25px 8px 0px;
   background: #eee;
   border: 1px solid #999;
   color: #333;
@@ -72,37 +73,94 @@ body {
   color: #fff;
 }
 
-.main {
+.notice_alert {
   background: #fff;
+  margin: 20px 50px;
+}
+
+.main {
   clear:both;
-  position: relative;
   margin: auto;
-  width: 80%;
-  top: 80px;
+  background: #fff;
   padding: 20px;
 }
 
-.main-vid {
-  height: 550px;
-  margin-bottom: 50px;
+.notice {
+  width: 100%;
+  background: white;
+  padding: 10px 20px;
 }
 
-.vid-thumb {
-  width: 200px;
+.main-container {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  clear: both;
+}
+
+.viewvid {
+  width: 700px;
+  float: left;
+  margin: 0 60px;
+  font-size: 22px;
+}
+
+.viewvids a {
+  font-size: 1em;
+}
+
+.othervids {
+  float: left;
+  background: #fff;
+  width: 300px;
+  margin: 0 20px;
+  padding: 20px 50px;
+  font-size: 14px;
 }
 
 .vid-thumb-info {
   float: left;
-  width: 180px;
+  width: 183px;
+  height: 210px;
   margin: 5px;
-  font-size: .7em;
+  font-size: .75em;
 }
 
 .vid-thumb-info a {
   font-weight: bold;
-  font-size: 12px;
+}
+
+.vid-thumb-info a:hover {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .dropdown {
   width: 150px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.submit-btn {
+  float: left;
+  padding: 10px;
+}
+
+.signin {
+  margin: 0 auto;
+  width: 400px;
+}
+
+.reset {
+  width: 100%;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.min-pw {
+  font-size: 14px;
+  color: #999;
 }

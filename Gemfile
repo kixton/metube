@@ -47,5 +47,6 @@ gem 'foundation-rails'
 
 gem 'devise'
 
+gem 'carrierwave'
 
 

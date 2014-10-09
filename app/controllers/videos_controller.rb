@@ -1,6 +1,11 @@
 class VideosController < ApplicationController
 
   before_action :authenticate_user!, :except => [:index, :show]
+  
+  def video_params
+    params.require(:video).permit(:name, :video)
+  end
+
   # list all videos - GET /videos
   def index
     @videos = Video.all
@@ -8,14 +13,18 @@ class VideosController < ApplicationController
 
   #show a single video - GET /videos/:id
   def show
+    @videos = Video.all
     @video = Video.find(params[:id])
     @playlists = Playlist.all
+
+    if user_signed_in?
+      @user = User.find(current_user)
+    end
   end
 
   #new video creation form - GET /videos/new
   def new
     #creating a blank video instance for our form
-    @video = current_user.videos.new
   end
 
   #create a new video - POST /videos
@@ -59,16 +68,14 @@ class VideosController < ApplicationController
 
   def add_to_playlist
     @video = Video.find(params[:id])
-    @video.playlists(params[:playlist_id])
     @playlist = Playlist.find(params[:playlist_id])
 
     # if playlist already includes the video, do not add
-    if @playlist == @video.playlists.find(params[:playlist_id])
-      "playlist already includes video"
+    if @playlist == @video.playlists.find_by(id: params[:playlist_id])
+      puts "playlist already includes video"
     else
       @video.playlists << @playlist
     end
-
   end
 
   private

@@ -12,13 +12,13 @@ class UsersController < ApplicationController
     if user_signed_in?
       @user = User.find(params[:id])
     else
-      # redirect to login
-      render new_
+      redirect_to new_user_session_path
     end
   end
 
   #new user creation form - GET /users/new
   def new
+    new_user_registration_path
   end
 
   #create a new user - POST /users

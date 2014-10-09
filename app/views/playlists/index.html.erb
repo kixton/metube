@@ -1,13 +1,18 @@
 
 <div class="main">
-<h2>All Playlists</h2>
 
 <%= link_to("New playlist", {action: "new"}, class: "button tiny") %><br>
 
 <% @playlists.each do |playlist| %>
 
   <%= link_to(playlist.listname, playlist_path(playlist)) %> by
-  <em><%= playlist.user.name %></em>
+  <em><%= link_to(playlist.user.name, user_path(playlist.user)) %></em><br>
+
+  <% if playlist.videos.length > 0 %>
+    <% playlist.videos.each do |video| %>
+      <%= video.title %><br>
+    <% end %>
+  <% end %>
 
   <br>
 

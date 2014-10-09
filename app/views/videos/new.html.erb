@@ -1,20 +1,20 @@
-<div class="main">
-<%= form_for @video do |f| %>
 
-  <% if @video.errors.any? %>
+<div class="main signin">
+
+  <%= form_for Video.new do |f| %>
+  <% if Video.new.errors.any? %>
     <ul>
-      <% @video.errors.full_messages.each do |msg| %>
+      <% Video.new.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>
   <% end %>
 
+  Video Title: <%= f.text_field :title %><br>
+  YouTube video ID: <%= f.text_field :url %><br>
+  Upload Video: <%=f.file_field :video %>
 
-  title: <%= f.text_field :title %><br>
-  url: <%= f.text_field :url %><br>
+  <%= f.submit "Upload", class: "navbtn login submit-btn" %><br><br>
 
-  <%= f.submit %>
 <% end %>
-
-<br>
 </div>

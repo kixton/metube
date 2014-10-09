@@ -1,18 +1,22 @@
 
-<div class="main">
+<div>
+</div>
 
-<iframe width="500" height="300" src="http://www.youtube.com/embed/<%= @video.url%>?modestbranding=1&amp;showinfo=0&amp;fs=0&amp;controls=0" class="showvideo"></iframe><br>
+<div class="main viewvid">
 
-<%= @video.title %><br>
-Uploaded by <em><%= @video.author.name %></em><br><br>
+  <iframe width="660" height="400" src="http://www.youtube.com/embed/<%=@video.url%>?modestbranding=1&amp;showinfo=0&amp;fs=0&amp;controls=0" class="showvideo" id="<%=@video.id%>"></iframe><br>
 
-<select id="add_to_playlist" class="button dropdown tiny" name="playlist_id">
-    <option selected disabled>Add to Playlist</option>
-  <% @playlists.each do |playlist| %>
-    <option value="<%= playlist.id %>"><%= playlist.listname %></option>
-  <% end %>
-</select>
+  <%= @video.title %><br>
+  <%= link_to(@video.author.name, user_path(@video.author)) %><br><br>
 
+  <select id="add_to_playlist" class="button dropdown tiny" name="playlist_id">
+      <option selected disabled>Add to Playlist</option>
+    <% if user_signed_in? %>
+      <% @user.playlists.each do |playlist| %>
+        <option value="<%= playlist.id %>"><%= playlist.listname %></option>
+      <% end %>
+    <% end %>
+  </select>
 
 
   <input type="button" value="Edit" class="button tiny" 
@@ -23,6 +27,17 @@ Uploaded by <em><%= @video.author.name %></em><br><br>
 
 <br>
 
+</div>
+
+<div class="othervids">
+<strong>OTHER VIDEOS</strong><br><br>
+<% @videos[4..6].each do |video| %>
+  <%= link_to(video_path(video)) do %>
+    <%= image_tag("http://img.youtube.com/vi/#{video.url}/hqdefault.jpg", width: "200", height: "80") %><br>
+  <% end %>
+  <%= link_to(video.title, video_path(video)) %><br>
+  <br>
+<% end %>
 </div>
 
 
