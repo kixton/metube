@@ -34,6 +34,10 @@ end
 
 post '/sign_in' => 'sessions#login'
 
+.statistics.viewCount
+snippet.string
+
+
 
 def current_user
   @user ||= User.find(sessions[:user_id])

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/users/sign_up' => 'users#new'
   post '/videos/:id/playlist_add' => 'videos#add_to_playlist'
 
+  get '/search' => 'search#index'
+  
   root 'videos#index'
   
 

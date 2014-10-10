@@ -18,6 +18,20 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
     @playlists = Playlist.all
 
+    api_key = "&key=" + ENV["GOOGLE_API"]
+    snippet_url = "https://www.googleapis.com/youtube/v3/videos?part=snippet&id="
+    statistics_url = "https://www.googleapis.com/youtube/v3/videos?part=statistics&id="
+    snippet_path = snippet_url + @video.url + api_key 
+    statistics_path = statistics_url + @video.url + api_key 
+    snippet_obj = RestClient.get(snippet_path)
+    statistics_obj = RestClient.get(statistics_path)
+
+    snippet_JSON = JSON.parse(snippet_obj)
+    statistics_JSON = JSON.parse(statistics_obj)
+
+    @vid_description = snippet_JSON["items"][0]["snippet"]["description"]
+    @view_count = statistics_JSON["items"][0]["statistics"]["viewCount"]
+
     if user_signed_in?
       @user = User.find(current_user)
     end
@@ -28,17 +42,9 @@ class VideosController < ApplicationController
     #creating a blank video instance for our form
 
   end
-  
+
   #create a new video - POST /videos
   def create
-    @apiKey = "?api_key=" + ENV["GOOGLE_API"]
-    @request_type = "/search"
-    @apiUrl = "https://www.googleapis.com/youtube/v3" + @request_type + @apiKey
-
-    binding.pry
-    test = RestClient.get("https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=bLX7EVoOR1k&key=AIzaSyD_kOEim4IBqhjAGNn7MQZ_rEA4PTkp4ks")
-    binding.pry
-
 
     @video = current_user.videos.new(video_params)
     @video.file_name = params[:video][:video].original_filename

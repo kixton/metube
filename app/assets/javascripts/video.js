@@ -15,3 +15,12 @@ $(document).ready(
     $("#featured").removeClass("active");
   })
 )
+
+// $(document).reasy(function() {
+//   $("#search-btn").click(function() {
+//     var search_keyword = $("#search-box").val();
+//     $.get('/search', {query: search_keyword}, function() {
+      
+//     })
+//   })
+// })

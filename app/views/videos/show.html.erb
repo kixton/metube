@@ -9,7 +9,7 @@
   <iframe width="660" height="400" src="http://www.youtube.com/embed/<%=@video.url%>?modestbranding=1&amp;showinfo=0&amp;fs=0&amp;controls=0" class="showvideo" id="<%=@video.id%>"></iframe><br>
 
   <%= @video.title %><br>
-  <%= link_to(@video.author.name, user_path(@video.author)) %><br><br>
+  <p class="vid-sub-info">Uploaded by: <%= link_to(@video.author.name, user_path(@video.author)) %> <span class="view-count">Views: <%= number_with_delimiter(@view_count, :delimiter => ',') %></span></p>
 
   <select id="add_to_playlist" class="button dropdown tiny" name="playlist_id">
       <option selected disabled>Add to Playlist</option>

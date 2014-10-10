@@ -20,6 +20,16 @@ body {
   margin: 10px;
 }
 
+.search-box {
+  float: left;
+  width: 280px;
+}
+
+.search-btn {
+  float: left;
+  width: 50px;
+}
+
 .subnav {
   clear: both;
   background: #fff;
@@ -163,4 +173,8 @@ body {
 .min-pw {
   font-size: 14px;
   color: #999;
+}
+
+.view-count {
+  float: right;
 }

@@ -53,3 +53,5 @@ gem 'figaro'
 
 gem 'rest-client'
 
+gem 'json'
+
