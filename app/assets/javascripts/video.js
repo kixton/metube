@@ -11,9 +11,9 @@
 
 $(document).ready(
   $("#playlists").click(function() {
-    $("#playlists").attr("class", "active");
+    $("#playlists").addClass("active");
     $("#featured").removeClass("active");
-  })
+  })  
 )
 
 // $(document).reasy(function() {

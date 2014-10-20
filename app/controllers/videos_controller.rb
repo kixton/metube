@@ -47,7 +47,7 @@ class VideosController < ApplicationController
   def create
 
     @video = current_user.videos.new(video_params)
-    @video.file_name = params[:video][:video].original_filename
+    # @video.file_name = params[:video][:video].original_filename
 
     @vidupload = VideoUploader.new
     @vidupload.store!(params[:video][:video])
