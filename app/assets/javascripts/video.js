@@ -11,16 +11,9 @@
 
 $(document).ready(
   $("#playlists").click(function() {
-    $("#playlists").addClass("active");
-    $("#featured").removeClass("active");
-  })  
-)
+    console.log("clicked")
+    $("#playlists").addClass("active-link");
+    $("#featured").removeClass("active-link");
+  })
 
-// $(document).reasy(function() {
-//   $("#search-btn").click(function() {
-//     var search_keyword = $("#search-box").val();
-//     $.get('/search', {query: search_keyword}, function() {
-      
-//     })
-//   })
-// })
+)

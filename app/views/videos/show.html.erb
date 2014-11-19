@@ -11,7 +11,7 @@
   <%= @video.title %><br>
   <p class="vid-sub-info">Uploaded by: <%= link_to(@video.author.name, user_path(@video.author)) %> <span class="view-count">Views: <%= number_with_delimiter(@view_count, :delimiter => ',') %></span></p>
 
-  <select id="add_to_playlist" class="button dropdown tiny" name="playlist_id">
+  <select id="add_to_playlist" class="button dropdown tiny btn-primary" name="playlist_id">
       <option selected disabled>Add to Playlist</option>
     <% if user_signed_in? %>
       <% @user.playlists.each do |playlist| %>
@@ -21,7 +21,7 @@
   </select>
 
 
-  <input type="button" value="Edit" class="button tiny" 
+  <input type="button" value="Edit" class="button tiny btn-primary" 
   onClick="javascript:location.href = '/videos/<%= @video.id %>/edit'">
 
 <!-- <%= link_to("Delete", video_path(@video), method: :delete, 

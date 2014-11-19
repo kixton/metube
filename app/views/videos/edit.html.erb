@@ -1,18 +1,20 @@
 <div class="main">
-<%= form_for @video do |f| %>
+  <div class="edit-video">
+    <%= form_for @video do |f| %>
 
-  <% if @video.errors.any? %>
-    <ul>
-      <% @video.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <% if @video.errors.any? %>
+        <ul>
+          <% @video.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
       <% end %>
-    </ul>
-  <% end %>
 
 
-  Title: <%= f.text_field :title %><br>
-  YouTube Video ID: <%= f.text_field :url %><br>
+      Title <%= f.text_field :title %><br>
+      YouTube Video ID <%= f.text_field :url %><br>
 
-  <%= f.submit %>
-<% end %>
+      <%= f.submit :class => "button tiny btn-primary" %>
+    <% end %>
+  </div>
 </div>

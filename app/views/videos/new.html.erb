@@ -10,9 +10,14 @@
     </ul>
   <% end %>
 
-  Video Title: <%= f.text_field :title %><br>
-  Upload Video: <%=f.file_field :video %><br><br>
-  (or YouTube video ID): <%= f.text_field :url %><br>
+  Video Title <%= f.text_field :title, :placeholder => "ex: Michelle Obama Turn Up For What" %><br>
+  Upload Video <%=f.file_field :video %>
+  <strong>OR</strong><br>
+  <br>
+
+  YouTube Video ID<br>
+  <em>(DEMO ID: <strong>nlQFjtNSXT0</strong>)</em>
+  <%= f.text_field :url, :placeholder => "Copy and paste demo ID from above" %><br>
 
   <%= f.submit "Upload", class: "navbtn login submit-btn" %><br><br>
 

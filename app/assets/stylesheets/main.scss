@@ -50,7 +50,7 @@ body {
   border-bottom: 2px solid #e51c23;
 }
 
-.subnav .active {
+.active-link {
   color: #000;
   font-weight: bold;
   border-bottom: 2px solid #e51c23;
@@ -73,12 +73,14 @@ body {
 }
 
 
+.btn-primary,
 .login {
   background: #167ac6;
   color: #fff;
   border-color: #126db3;
 }
 
+.btn-primary:hover,
 .login:hover {
   background: #126db3;
   color: #fff;
@@ -130,6 +132,10 @@ body {
   font-size: 14px;
 }
 
+.vid-thumb {
+  width: 150px;
+}
+
 .vid-thumb-info {
   float: left;
   width: 183px;
@@ -178,4 +184,20 @@ body {
 
 .view-count {
   float: right;
+}
+
+.edit-video {
+  width: 50%;
+  margin: auto;
+}
+
+.dropdown {
+  height: 33px;
+}
+
+.user-uploads,
+.user-playlists {
+  width: 49%;
+  display: inline-block;
+  vertical-align: top;
 }

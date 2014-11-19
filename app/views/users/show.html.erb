@@ -1,23 +1,27 @@
-<br><br>
 
-<font color="red">This is a single user's profile page - styling to be updated</font><br>
-<h2><%= @user.name %></h2>
+<div class="user-uploads">
+  <h3>Videos uploaded by <%= @user.name %></h3><br>
 
-<strong>These are the videos uploaded by the user</strong><br>
-<% @user.videos.each do |video| %>
-  <%= video.title %> <br>
+  <% @user.videos.each do |video| %>
 
-<% end %>
+    <%= link_to "/videos/#{video.id}" do %>
+      <%= video.title %><br>
+      <%= image_tag("http://img.youtube.com/vi/#{video.url}/hqdefault.jpg", :class => "vid-thumb") %> 
+    <% end %>
+    <br><br>
 
-<br>
-
-<strong>This is the user's playlists</strong><br>
-<% @user.playlists.each do |playlist| %>
-
-  <%= playlist.listname %><br>
-  
-  <% playlist.videos.each do |video| %>
-    <%= video.title %>
+    <!-- <%= video.title %> <br> -->
   <% end %>
+</div>
 
-<% end %>
+<div class="user-playlists">
+  <h3><%= @user.name %>'s Playlists</h3><br>
+  <% @user.playlists.each do |playlist| %>
+
+    <%= playlist.listname %><br>
+    
+    <% playlist.videos.each do |video| %>
+      <%= video.title %>
+    <% end %>
+  <% end %>
+</div>
