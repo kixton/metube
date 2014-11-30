@@ -5,4 +5,3 @@ This was my first **CRUD** Rails app (no scaffolding!)
 * User can **(R)**ead (aka View) videos, playlists, and user profiles
 * User can **(U)**pdate videos and playlists
 * User can **(D)**)elete videos and playlists
-
