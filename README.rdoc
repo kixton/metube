@@ -1,7 +1,7 @@
-This was my first **CRUD** Rails app (no scaffolding!)
+This was my first *CRUD* Rails app (no scaffolding!)
 
 * User can log in (implemented using Devise)
-* User can **(C)**reate videos and playlists
-* User can **(R)**ead (aka View) videos, playlists, and user profiles
-* User can **(U)**pdate videos and playlists
-* User can **(D)**)elete videos and playlists
+* User can *(C)*reate videos and playlists
+* User can *(R)*ead (aka View) videos, playlists, and user profiles
+* User can *(U)*pdate videos and playlists
+* User can *(D)*elete videos and playlists
